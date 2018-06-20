@@ -3,7 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://thegtproject.github.io/categories/</loc>
+    <loc>https://thegtproject.github.io/post/preview-of-pixel-shaders/</loc>
+    <lastmod>2018-06-19T13:01:55-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thegtproject.github.io/post/</loc>
+    <lastmod>2018-06-19T13:01:55-06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://thegtproject.github.io/series/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://thegtproject.github.io/series-desc/</loc>
     <priority>0</priority>
   </url>
   
@@ -14,6 +30,7 @@
   
   <url>
     <loc>https://thegtproject.github.io/</loc>
+    <lastmod>2018-06-19T13:01:55-06:00</lastmod>
     <priority>0</priority>
   </url>
   

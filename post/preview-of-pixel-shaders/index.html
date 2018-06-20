@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.43-DEV" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Preview of Pixel Shaders &middot; tgp</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://thegtproject.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://thegtproject.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://thegtproject.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://thegtproject.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="tgp" />
+
+  
+</head>
+
+  <body class=" ">
+  <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://thegtproject.github.io/"><h1>tgp</h1></a>
+      <p class="lead">
+       home page 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="https://thegtproject.github.io/">Home</a> </li>
+      
+    </ul>
+
+    <p>&copy; 2018. All rights reserved. </p>
+  </div>
+</div>
+
+    <div class="content container">
+    <div class="post">
+  <h1>Preview of Pixel Shaders</h1>
+  <span class="post-date">Tue, Jun 19, 2018</span>
+  
+
+<blockquote>
+<p>Note: This process is specific to the preview of my shader support feature. It is none-breaking if you&rsquo;re already using pixel.</p>
+</blockquote>
+
+<p>This post will walk you through the process of getting the Pixel game development library and it&rsquo;s dependencies working correctly. Particularly on Windows this was a hard barrier to get passed. I want to make that easier for newer Go developers to get started with Pixel. Some of the instructions may be obvious to you.</p>
+
+<h2 id="windows">Windows</h2>
+
+<hr />
+
+<h4 id="install-go">Install Go</h4>
+
+<p>Download the Go amd64 msi installer from <a href="https://golang.org/dl/">https://golang.org/dl/</a></p>
+
+<p>Install with defaults unless you know what you&rsquo;re doing.</p>
+
+<p>The installer should put the <code>c:\Go\bin</code> directory in your PATH environment variable. You may need to restart any open command prompts for the change to take effect.</p>
+
+<h4 id="install-msys2">Install MSYS2</h4>
+
+<p>This is the confusing part for many newer developers. Just follow the steps exactly and it should work on your first try.</p>
+
+<p>Download msys2-x86_64 from <a href="https://www.msys2.org/">https://www.msys2.org/</a></p>
+
+<p>Install with defaults unless you know what you&rsquo;re doing.</p>
+
+<p>Run msys2.exe and update it&rsquo;s components:</p>
+
+<p><code>pacman -Syu</code></p>
+
+<p>When this step is finished it will tell you to close that window. <strong>Forcibly</strong> do this by clicking the X many times or using task manager to kill the process.</p>
+
+<p>Rerun msys2.exe and the update command again:</p>
+
+<p><code>pacman -Syu</code></p>
+
+<p>Now you will download the required gcc toolchain:</p>
+
+<p><code>pacman -Sy mingw-w64-x86_64-toolchain</code></p>
+
+<p>Accept the default=all option.</p>
+
+<p>Important: Make sure the following line appears before any other msys/mingw directories:</p>
+
+<p>(default location, yours may vary)
+<code>c:\msys64\mingw64\bin</code></p>
+
+<h4 id="retreiving-needed-packages">Retreiving needed packages</h4>
+
+<p>Since this post is about previewing my shader support update, we are going to be downloading the shader support branch from my github repo but placing it in the default location of faiface&rsquo;s github directory. This is required as a side effect of go&rsquo;s package system and to avoid having to change a great amount of import lines. This branch should be NONE breaking for any existing pixel users.</p>
+
+<p>Clone shader support branches for pixel:</p>
+
+<p><code>git clone -b shadersupport https://github.com/thegtproject/pixel %GOPATH%\src\github.com\faiface\pixel</code></p>
+
+<p>Clone shader support branches for glhf:</p>
+
+<p><code>git clone -b pixelshaders https://github.com/thegtproject/glhf %GOPATH%\src\github.com\faiface\glhf</code></p>
+
+<p>And now you can go get the remaining dependencies. If a couple terminated build errors show up, do not worry about them. Let the process continue uninterupted.</p>
+
+<pre><code>go get github.com/faiface/mainthread
+go get github.com/go-gl/gl/...
+go get github.com/go-gl/glfw/...
+go get github.com/go-gl/mathgl/...
+</code></pre>
+
+<h4 id="finished">Finished</h4>
+
+<p>Great now we should be able to run a pixel project from source. To test this navigate to the following directory</p>
+
+<p><code>%GOPATH%\src\github.com\faiface\pixel\examples\platformer</code></p>
+
+<p>and try to run it:</p>
+
+<p><code>go run main.go</code></p>
+
+<p>Success?</p>
+
+<p><img src="/images/platformerss.png" alt="" /></p>
+
+</div>
+
+
+    </div>
+
+    
+  </body>
+</html>

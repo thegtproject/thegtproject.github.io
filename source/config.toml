@@ -1,4 +1,22 @@
 baseURL = "https://thegtproject.github.io/"
 languageCode = "en-us"
-title = "thegtproject"
+title = "tgp"
 theme = "hyde"
+markup = "default"
+
+ [Author]
+         name = "me"
+
+ [Permalinks]
+         blog = "/:year/:month/:filename/"
+         code = "/:filename/"
+         themeColor = "theme-base-0d"
+ [Taxonomies]
+         tag = "tags"
+         series = "series"
+         series-desc = "series-desc"
+
+ [params]
+         description = "home page"
+         twitter = ""
+         gplus = ""
