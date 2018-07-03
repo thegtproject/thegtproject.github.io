@@ -44,10 +44,14 @@ Now you will download the required gcc toolchain:
 
 Accept the default=all option.
 
-Important: Make sure the following line appears before any other msys/mingw directories:
+**Important:** Make sure the following line appears before any other msys/mingw directories in your system path:
 
 (default location, yours may vary)
 `c:\msys64\mingw64\bin`
+
+This is mine for example. My paths are not default though, you'll need to make sure your paths are correct:
+
+![](/images/path.png)
 
 #### Retreiving needed packages
 

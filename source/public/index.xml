@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tgp</title>
+    <link>https://thegtproject.github.io/</link>
+    <description>Recent content on tgp</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 19 Jun 2018 13:01:55 -0600</lastBuildDate>
+    
+	<atom:link href="https://thegtproject.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Preview of Pixel Shaders</title>
+      <link>https://thegtproject.github.io/post/preview-of-pixel-shaders/</link>
+      <pubDate>Tue, 19 Jun 2018 13:01:55 -0600</pubDate>
+      
+      <guid>https://thegtproject.github.io/post/preview-of-pixel-shaders/</guid>
+      <description>Note: This process is specific to the preview of my shader support feature. It is none-breaking if you&amp;rsquo;re already using pixel.
+ This post will walk you through the process of getting the Pixel game development library and it&amp;rsquo;s dependencies working correctly. Particularly on Windows this was a hard barrier to get passed. I want to make that easier for newer Go developers to get started with Pixel. Some of the instructions may be obvious to you.</description>
+    </item>
+    
+  </channel>
+</rss>
